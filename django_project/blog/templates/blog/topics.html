@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+  <h2>Random 10 topics Posted</h2>
+   <div class="list-group">
+           {% for post in posts1 %}
+    <!--<a href="#" class="list-group-item list-group-item-success">{{ post.title }}</a>-->
+        <h5><a class="list-group-item list-group-item-success" href="{% url 'user-posts' post.title %}">{{ post.title}}</a></h5>
+
+       {% endfor %}
+       <h2>Recent 10 Topics Posted</h2>
+       {% for post in posts %}
+    <!--<a href="#" class="list-group-item list-group-item-success">{{ post.title }}</a>-->
+        <h5><a class="list-group-item list-group-item-success" href="{% url 'user-posts' post.title %}">{{ post.title}}</a></h5>
+
+       {% endfor %}
+
+
+  </div>
+{% endblock content %}
+
